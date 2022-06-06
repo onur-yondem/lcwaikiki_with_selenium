@@ -24,7 +24,7 @@ class LCWaikiki:
     website = "https://www.lcwaikiki.com/tr-TR/TR"
 
     def __init__(self):
-        self.driver = webdriver.Chrome("onuryondem/automation/basic-selenium/chromedriver")
+        self.driver = webdriver.Chrome("*/chromedriver")
         self.driver.maximize_window()
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
