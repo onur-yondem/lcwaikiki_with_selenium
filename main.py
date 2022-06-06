@@ -29,7 +29,7 @@ class LCWaikiki:
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(ChromeDriverManager(chrome_options=chrome_options).install())
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.maximize_window()
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
