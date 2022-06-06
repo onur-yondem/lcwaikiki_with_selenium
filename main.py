@@ -1,5 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -21,11 +22,14 @@ class LCWaikiki:
     IS_ADDED_PRODUCT = (By.CLASS_NAME, "badge-circle")
     IS_ON_BASKET_PAGE = (By.CLASS_NAME, "main-button")
     IS_ON_MAIN_PAGE = (By.CLASS_NAME, "header__top")
-
     website = "https://www.lcwaikiki.com/tr-TR/TR"
 
     def __init__(self):
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        driver = webdriver.Chrome(ChromeDriverManager(chrome_options=chrome_options).install())
         self.driver.maximize_window()
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
