@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -24,7 +25,7 @@ class LCWaikiki:
     website = "https://www.lcwaikiki.com/tr-TR/TR"
 
     def __init__(self):
-        self.driver = webdriver.Chrome("*/chromedriver")
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.maximize_window()
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
