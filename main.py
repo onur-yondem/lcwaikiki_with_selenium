@@ -29,7 +29,7 @@ class LCWaikiki:
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        self.driver = webdriver.Chrome('/home/onuryondem/automation/basic-selenium/chromedriver',chrome_options=chrome_options)
+        self.driver = webdriver.Chrome('/home/onuryondem/automation/basic-selenium/chromedriver', chrome_options)
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
         self.actions = ActionChains(self.driver)
