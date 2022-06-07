@@ -25,11 +25,10 @@ class LCWaikiki:
     website = "https://www.lcwaikiki.com/tr-TR/TR"
 
     def __init__(self):
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
-        self.driver = webdriver.Chrome('/home/onuryondem/automation/basic-selenium/chromedriver', chrome_options)
+        options = webdriver.ChromeOptions()
+        options.add_argument('--window-size=1920,1080')
+        options.add_argument("--headless")
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         self.driver.get(self.website)
         self.wait = WebDriverWait(self.driver, 10)
         self.actions = ActionChains(self.driver)
