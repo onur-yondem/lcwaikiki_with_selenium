@@ -14,7 +14,7 @@ class LCWaikiki:
     MAIN_CATEGORY_BTN = (By.CLASS_NAME, "menu-header-item")
     PRODUCT_PAGE_LINK = (By.CLASS_NAME, "product-image")  # 4
     PRODUCT_SIZE_ELEMENTS = (By.CSS_SELECTOR, "#option-size a")
-    ADD_TO_CART_BTN = (By.ID, "pd_add_to_cartt")
+    ADD_TO_CART_BTN = (By.ID, "pd_add_to_cart")
     BASKET_BTN = (By.CLASS_NAME, "cart-action__btn--bg-green")  # 1
 
     # Assert Locators
